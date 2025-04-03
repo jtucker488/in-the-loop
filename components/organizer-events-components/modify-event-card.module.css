@@ -1,0 +1,51 @@
+.tooltip_container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip_content {
+    visibility: hidden;
+    background-color: #424242;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    top: 100%; /* Position below the title */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    max-width: 90vw; /* Ensures the tooltip doesn’t overflow the viewport width */
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Ensure long words wrap */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none; /* Avoid tooltip blocking other interactions */
+}
+
+.tooltip_container:hover .tooltip_content {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto; /* Ensure the tooltip is interactive */
+}
+
+/* Adjust the tooltip position if it overflows to the right */
+.tooltip_content::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.hashtags_wrapper {
+    max-height: 64px; /* Limit the height to 64 pixels, adjust as needed */
+    overflow: hidden; /* Hide the overflowed content */
+    text-overflow: ellipsis; /* Ensure overflowed content is cut off */
+    display: flex;
+    flex-wrap: wrap; /* This will make sure that the hashtags wrap to the next line if they overflow */
+}

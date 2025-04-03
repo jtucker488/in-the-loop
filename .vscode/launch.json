@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "webpack://*/./*": "${webRoot}/*"
+      },
+      "skipFiles": ["chrome-error://*"]  // Ignore Chrome's internal error pages
+    }
+  ]
+}
+
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//       "type": "node",
+//       "request": "launch",
+//       "name": "Next.js Debug",
+//       "runtimeExecutable": "/Users/johntucker/.nvm/versions/node/v18.20.5/bin/node",
+//       "runtimeArgs": ["--inspect", "./node_modules/.bin/next", "dev"],
+//       "port": 9229,
+//       "console": "integratedTerminal",
+//       "internalConsoleOptions": "neverOpen",
+//       "sourceMaps": true,
+//       "skipFiles": ["<node_internals>/**"]
+//     }
+//   ]
+// }
